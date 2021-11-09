@@ -1,5 +1,5 @@
 const mailjet = require('node-mailjet')
-    .connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE)
+    .connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE);
 const sendWelcomeEmail = (email, name) => {
     mailjet
         .post("send", { 'version': 'v3.1' })
@@ -21,8 +21,8 @@ const sendWelcomeEmail = (email, name) => {
                     "CustomID": "AppGettingStartedTest"
                 }
             ]
-        })
-}
+        });
+};
 
 const sendCancelationEmail = (email, name) => {
     mailjet
@@ -45,10 +45,10 @@ const sendCancelationEmail = (email, name) => {
                     "CustomID": "AppGettingStartedTest"
                 }
             ]
-        })
-}
+        });
+};
 
 module.exports = {
     sendWelcomeEmail,
     sendCancelationEmail
-}
+};
